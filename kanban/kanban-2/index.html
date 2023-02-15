@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <h1>Studio Kanban</h1>
+
+    <div class="kanban">
+
+        <div class="kanban__column">
+            <div class="kanban__column-topline"></div>
+            <div class="kanban__column-header">
+                <div class="kanban__column-title">
+                    <h2>Backlog</h2>
+                </div>
+                <img style="width: 30px; cursor: pointer;" src="assets/question.svg" alt="?">
+            </div>
+
+            <div class="kanban__colum_items">
+                <div class="kanban__item">
+                    <div class="tag low-priority">Low Priority</div>    
+                    <p>Implement responsive design for mobile and tablet devices</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>1</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Mobile app login proces prototype</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>4</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>3</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+
+                <div class="kanban__item">
+                    <div class="tag high-priority">High Priority</div>    
+                    <p>Shopping cart and product catalog wireframes in WebShop project</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>0</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>7</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+
+                <div class="kanban__item">
+                    <div class="tag high-priority">High Priority</div>    
+                    <p>Create a user authentication system with password hashing and salting</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>3</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>0</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+
+                <div class="kanban__item">
+                    <div class="tag low-priority">Low Priority</div>    
+                    <p>Develop a landing page with clear call-to-action buttons</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>2</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>5</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                
+            </div>
+            
+
+            <div class="kanban__add-item">
+                <h4>Add task</h4>
+                <img style="width: 20px; margin-left: 5px;" src="assets/add.svg" alt="+">
+            </div>
+            
+
+        </div>
+
+        <!-- other cols -->
+        <div class="kanban__column">
+            <div class="kanban__column-topline" style="background-image: linear-gradient(to right, #959aff, #a082dc);"></div>
+            <div class="kanban__column-header">
+                <div class="kanban__column-title">
+                    <h2>In Progress</h2>
+                </div>
+                <img style="width: 30px; cursor: pointer;" src="assets/question.svg" alt="?">
+            </div>
+
+            <div class="kanban__colum_items">
+                <div class="kanban__item">
+                    <div class="tag high-priority">High Priority</div>    
+                    <p>Add search functionality to website using keyword and category filters</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>1</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Improve website loading speed by optimizing images and minimizing HTTP requests</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>5</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Implement a caching system to reduce server load and improve website performance</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>7</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>3</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag low-priority">Low Priority</div>    
+                    <p>Add social media sharing buttons to allow users to share website content on their social media accounts</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>12</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>4</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Create an admin dashboard to manage website content and user accounts</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>0</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>0</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag high-priority">High Priority</div>    
+                    <p>Implement an email newsletter subscription system with Mailchimp integration</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>3</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+            </div>
+
+       
+            
+
+            <div class="kanban__add-item">
+                <h4>Add task</h4>
+                <img style="width: 20px; margin-left: 5px;" src="assets/add.svg" alt="+">
+            </div>
+            
+
+        </div>
+
+        <!-- Column review -->
+        <div class="kanban__column">
+            <div class="kanban__column-topline" style="background-image: linear-gradient(to right, #ffbb33, #9eb53c);"></div>
+            <div class="kanban__column-header">
+                <div class="kanban__column-title">
+                    <h2>Paused</h2>
+                </div>
+                <img style="width: 30px; cursor: pointer;" src="assets/question.svg" alt="?">
+            </div>
+
+            <div class="kanban__colum_items">
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Develop a blog section for the website with commenting and sharing functionalities</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>2</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+
+            </div>
+
+       
+            
+
+            <div class="kanban__add-item">
+                <h4>Add task</h4>
+                <img style="width: 20px; margin-left: 5px;" src="assets/add.svg" alt="+">
+            </div>
+            
+
+        </div>
+
+        <!-- Column review -->
+        <div class="kanban__column">
+            <div class="kanban__column-topline" style="background-image: linear-gradient(to right, #fb5906, #cc136f);"></div>
+            <div class="kanban__column-header">
+                <div class="kanban__column-title">
+                    <h2>Review</h2>
+                </div>
+                <img style="width: 30px; cursor: pointer;" src="assets/question.svg" alt="?">
+            </div>
+
+            <div class="kanban__colum_items">
+                <div class="kanban__item">
+                    <div class="tag low-priority">Low Priority</div>    
+                    <p>Add SSL certification to ensure secure communication between the website and users</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>1</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag high-priority">High Priority</div>    
+                    <p>Implement a Google Maps API to display location-based information on the website
+                        Create a contact form to allow users to get in touch with the website owners
+                        Develop an e-commerce system with shopping cart functionality</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>14</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>3</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                
+            </div>
+
+       
+            
+
+            <div class="kanban__add-item">
+                <h4>Add task</h4>
+                <img style="width: 20px; margin-left: 5px;" src="assets/add.svg" alt="+">
+            </div>
+            
+
+        </div>
+
+        <!-- Column review -->
+        <div class="kanban__column">
+            <div class="kanban__column-topline" style="background-image: linear-gradient(to right, #6dd0a5, #41aea1);"></div>
+            <div class="kanban__column-header">
+                <div class="kanban__column-title">
+                    <h2>Done</h2>
+                </div>
+                <img style="width: 30px; cursor: pointer;" src="assets/question.svg" alt="?">
+            </div>
+
+            <div class="kanban__colum_items">
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Implement a content management system (CMS) to allow website owners to easily update website content</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>1</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>2</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                <div class="kanban__item">
+                    <div class="tag medium-priority">Med Priority</div>    
+                    <p>Develop a responsive image gallery with lightbox functionality</p>
+                    <div class="kanban__item-fotter">
+                        <div class="kanban__item-fotter-left">
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/message.svg" alt="msg"> <p>0</p>
+                            </div>
+                            <div class="kanban__item-fotter-icon">
+                                <img style="width: 20px; margin-right: 5px;" src="assets/attach.svg" alt="att"> <p>4</p>
+                            </div>
+                        </div>
+                        <img style="width: 24px;" src="assets/user.svg" alt="acc">
+                    </div>
+                </div>
+                
+            </div>
+
+       
+            
+
+            <div class="kanban__add-item">
+                <h4>Add task</h4>
+                <img style="width: 20px; margin-left: 5px;" src="assets/add.svg" alt="+">
+            </div>
+            
+
+        </div>
+
+        
+
+      
+
+        
+    </div>
+    
+    
+</body>
+</html>

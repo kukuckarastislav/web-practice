@@ -1,0 +1,187 @@
+{
+    "project": "Web Development Project",
+    "tasks": [
+        {
+            "attachments": 5,
+            "columnId": 3,
+            "messages": 11,
+            "priority": 3,
+            "task": "Implement responsive design for mobile and tablet devices"
+        },
+        {
+            "attachments": 4,
+            "columnId": 3,
+            "messages": 11,
+            "priority": 2,
+            "task": "Create a user authentication system with password hashing and salting"
+        },
+        {
+            "attachments": 4,
+            "columnId": 0,
+            "messages": 12,
+            "priority": 2,
+            "task": "Develop a landing page with clear call-to-action buttons"
+        },
+        {
+            "attachments": 3,
+            "columnId": 0,
+            "messages": 6,
+            "priority": 1,
+            "task": "Integrate a payment gateway for online transactions"
+        },
+        {
+            "attachments": 5,
+            "columnId": 0,
+            "messages": 10,
+            "priority": 1,
+            "task": "Add search functionality to website using keyword and category filters"
+        },
+        {
+            "attachments": 1,
+            "columnId": 4,
+            "messages": 6,
+            "priority": 2,
+            "task": "Improve website loading speed by optimizing images and minimizing HTTP requests"
+        },
+        {
+            "attachments": 1,
+            "columnId": 3,
+            "messages": 14,
+            "priority": 1,
+            "task": "Implement a caching system to reduce server load and improve website performance"
+        },
+        {
+            "attachments": 7,
+            "columnId": 0,
+            "messages": 9,
+            "priority": 1,
+            "task": "Add social media sharing buttons to allow users to share website content on their social media accounts"
+        },
+        {
+            "attachments": 2,
+            "columnId": 2,
+            "messages": 8,
+            "priority": 2,
+            "task": "Create an admin dashboard to manage website content and user accounts"
+        },
+        {
+            "attachments": 2,
+            "columnId": 0,
+            "messages": 13,
+            "priority": 1,
+            "task": "Implement an email newsletter subscription system with Mailchimp integration"
+        },
+        {
+            "attachments": 7,
+            "columnId": 4,
+            "messages": 0,
+            "priority": 3,
+            "task": "Develop a blog section for the website with commenting and sharing functionalities"
+        },
+        {
+            "attachments": 1,
+            "columnId": 0,
+            "messages": 2,
+            "priority": 3,
+            "task": "Add SSL certification to ensure secure communication between the website and users"
+        },
+        {
+            "attachments": 5,
+            "columnId": 3,
+            "messages": 3,
+            "priority": 1,
+            "task": "Implement a Google Maps API to display location-based information on the website"
+        },
+        {
+            "attachments": 7,
+            "columnId": 2,
+            "messages": 13,
+            "priority": 2,
+            "task": "Create a contact form to allow users to get in touch with the website owners"
+        },
+        {
+            "attachments": 7,
+            "columnId": 2,
+            "messages": 11,
+            "priority": 3,
+            "task": "Develop an e-commerce system with shopping cart functionality"
+        },
+        {
+            "attachments": 1,
+            "columnId": 4,
+            "messages": 0,
+            "priority": 2,
+            "task": "Implement a content management system (CMS) to allow website owners to easily update website content"
+        },
+        {
+            "attachments": 7,
+            "columnId": 4,
+            "messages": 3,
+            "priority": 3,
+            "task": "Develop a responsive image gallery with lightbox functionality"
+        },
+        {
+            "attachments": 5,
+            "columnId": 4,
+            "messages": 14,
+            "priority": 2,
+            "task": "Add a sitemap to improve website SEO and crawlability"
+        },
+        {
+            "attachments": 0,
+            "columnId": 2,
+            "messages": 5,
+            "priority": 3,
+            "task": "Implement breadcrumb navigation to improve website navigation and user experience"
+        },
+        {
+            "attachments": 5,
+            "columnId": 1,
+            "messages": 13,
+            "priority": 2,
+            "task": "Integrate a live chat system for customer support"
+        },
+        {
+            "attachments": 7,
+            "columnId": 2,
+            "messages": 9,
+            "priority": 1,
+            "task": "Create custom error pages to improve website usability"
+        },
+        {
+            "attachments": 5,
+            "columnId": 4,
+            "messages": 8,
+            "priority": 3,
+            "task": "Implement a language switcher for websites with multiple language options"
+        },
+        {
+            "attachments": 5,
+            "columnId": 3,
+            "messages": 10,
+            "priority": 2,
+            "task": "Develop a custom search engine to allow for more advanced search functionalities"
+        },
+        {
+            "attachments": 6,
+            "columnId": 2,
+            "messages": 8,
+            "priority": 2,
+            "task": "Add social proof elements such as customer reviews and ratings to increase trust and credibility"
+        },
+        {
+            "attachments": 7,
+            "columnId": 3,
+            "messages": 14,
+            "priority": 2,
+            "task": "Implement a related products feature to suggest similar products to users based on their browsing history"
+        },
+        {
+            "attachments": 7,
+            "columnId": 1,
+            "messages": 11,
+            "priority": 3,
+            "task": "Create a frequently asked questions"
+        }
+    ]
+}
