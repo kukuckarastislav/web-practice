@@ -1,0 +1,204 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ig-story-container::-webkit-scrollbar {
+    display: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: gainsboro;
+    /* margin: 0; */
+}
+
+.ig-header{
+    height: 30px;
+    background-color: white;
+    position: fixed;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gainsboro ;
+    z-index: 10;
+}
+
+/*
+html:not([data-scroll="0"]) .ig-header {
+    background-color: red;
+}
+*/
+
+.ig-header-spacer{
+    width: 100%;
+    height: 55px;
+}
+
+.ig-logo-text{
+    width: 100%;
+}
+
+.ig-icon{
+    width: 22px;
+}
+
+.ig-header-icons{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 6px;
+}
+
+
+/* Story */
+
+.ig-story-container {
+    height:120px;
+    width: 100%;
+    overflow-y:hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    border-bottom: 1px solid gainsboro ;
+    padding-left: 6px;
+}
+  
+.hdiv {
+    padding-top: 4px;
+    height:100%;
+    width: 80px;    
+    display:inline-block;
+    vertical-align: top;
+}
+
+.ig-story-img{
+    border-radius: 50%;
+    border: 4px white solid;
+    width: 100%;
+}
+
+.ig-story-img-you{
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+}
+
+.ig-story-add{
+    background-color: #3797F0;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+    left: 50px;
+    top: -28px;
+}
+
+.ig-story-img-new{
+    padding: 2px;
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    /* border: 2px red solid; */
+    background: linear-gradient(45deg, rgba(245,156,61,1) 0%, rgba(200,37,105,1) 50%, rgba(170,16,164,1) 100%);
+    
+}
+
+.ig-story-img-old{
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px gainsboro solid;
+}
+
+.ig-story-username{
+    text-align: center;
+    font-size: small;
+}
+
+
+/* Post */
+
+.ig-post-container{
+
+}
+
+.text-description{
+    font-size: medium;
+}
+
+.text-gray{
+    color: lightgray;
+}
+
+.ig-post-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+}
+
+.ig-post-header-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ig-post-profile-username{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+.ig-post-profile{
+    border-radius: 50%;
+    width: 30px;
+}
+
+.ig-post-header-dots{
+    width: 18px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.ig-post-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+}
+
+.ig-post-footer-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.save-icon{
+    margin-right: 10px;
+}
+
+.ig-post-comments{
+    padding: 10px;
+}
