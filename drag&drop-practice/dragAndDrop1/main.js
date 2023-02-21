@@ -1,21 +1,5 @@
-let draggableElem = document.getElementById("draggable-elem");
-let initialX = 0
-let initialY = 0
-
-let moveElement = false;
-//Events Object
-let events = {
-    mouse: {
-        down: "mousedown",
-        move: "mousemove",
-        up: "mouseup"
-    },
-    touch: {
-        down: "touchstart",
-        move: "touchmove",
-        up: "touchend"
-    }
-}
+import Card from "/Card.js";
+let containerDiv = document.getElementById("container");
 
 let deviceType = "";
 
@@ -31,50 +15,41 @@ const isTouchDeviceF = () => {
     }
     return false;
 }
-
 var isTouchDevice = isTouchDeviceF()
 
-draggableElem.addEventListener(events[deviceType].down, (e) => {
-    e.preventDefault();
-    initialX = !isTouchDevice ? e.clientX : e.touches[0].clientX;
-    initialY = !isTouchDevice ? e.clientY : e.touches[0].clientY;
-    moveElement = true;
-});
-
-draggableElem.addEventListener(events[deviceType].move, (e) => { 
-    if (moveElement) {
-        e.preventDefault();
-        let newX = !isTouchDevice ? e.clientX : e.touches[0].clientX;
-        let newY = !isTouchDevice ? e.clientY : e.touches[0].clientY;
-        
-        const moveY = draggableElem.offsetTop - (initialY - newY);
-        const moveX = draggableElem.offsetLeft - (initialX - newX);
-
-        if (moveX >= draggableElem.offsetWidth / 2 && moveX <= window.innerWidth - draggableElem.offsetWidth / 2) {
-            draggableElem.style.left = moveX + "px";    
-            initialX = newX;
-        }
-
-        if (moveY >= draggableElem.offsetHeight / 2 && moveY <= window.innerHeight - draggableElem.offsetHeight / 2) {
-            draggableElem.style.top = moveY + "px";
-            initialY = newY;
-        }
+let events = {
+    mouse: {
+        down: "mousedown",
+        move: "mousemove",
+        up: "mouseup"
+    },
+    touch: {
+        down: "touchstart",
+        move: "touchmove",
+        up: "touchend"
     }
-});
+}
 
-draggableElem.addEventListener(events[deviceType].up, (e) => {
-    moveElement = false;
+let cards = []
+cards.push(new Card(containerDiv, 1, "Drag me 1", 200, 200, 100, 100, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 2, "Drag me 2", 400, 200, 400, 100, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 3, "Drag me 3", 200, 400, 100, 400, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 4, "Drag me 4", 400, 400, 400, 400, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 5, "Drag me 5", 600, 400, 900, 400, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 6, "Drag me 6", 200, 200, 100, 700, deviceType, events[deviceType]))
+cards.push(new Card(containerDiv, 7, "Drag me 7", 200, 200, 300, 700, deviceType, events[deviceType]))
+
+containerDiv.addEventListener("mouseleave", (e) => {
+    cards.forEach(card => {
+        card.moveElement = false;
+    })
+})
+
+containerDiv.addEventListener(events[deviceType].up, (e) => {
+    cards.forEach(card => {
+        card.moveElement = false;
+    })
 })
 
 
-document.getElementById("container").addEventListener("mouseleave", (e) => {
-    moveElement = false;
-})
 
-document.getElementById("container").addEventListener(events[deviceType].up, (e) => {
-    moveElement = false;
-})
-
-draggableElem.addEventListener("contextmenu", (e) => {
-    e.preventDefault();    
-})
