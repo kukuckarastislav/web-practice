@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="module" defer></script>
+    <title>Drag-Drop</title>
+</head>
+<body>
+
+    <svg id="container" width="100%" height="100%">
+        <!-- 
+        <g id="draggable-elem">
+            <rect x="300" y="500" width="200" height="100" class="draggable-elem-svg"></rect>
+        </g>
+        -->
+
+    </svg>
+
+<script>
+    /*
+    var wiggle_factor = 0.0;
+
+// create svg:
+var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+svg.setAttribute('style', 'border: 1px solid black');
+svg.setAttribute('width', '6000');
+svg.setAttribute('height', '6000');
+svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+document.body.appendChild(svg);
+
+nodes = [];
+
+function makeNode(wiggle) {
+    var node = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    var node_x = (Math.random() * 1000);
+    var node_y = (Math.random() * 1000);
+    node.setAttribute("transform", "translate(" + node_x + ", " + node_y +")");
+    
+    // circle:
+    var circ = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    circ.setAttribute( "id","cir")
+    circ.setAttribute( "x", 0 + "px")
+    circ.setAttribute( "y", 0 + "px")
+    circ.setAttribute( "width", 100 + "px")
+    circ.setAttribute( "height", 100 + "px")
+    
+    // text:
+    var text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.textContent = "This is a test! ÅÆØ";
+    
+    node.appendChild(circ);
+    node.appendChild(text);
+
+    node.x = node_x;
+    node.y = node_y;
+    
+    if(wiggle)
+        nodes.push(node)
+    return node;
+}
+
+// populate with 100 nodes:
+for(var i = 0; i < 10; i++) {
+    var node = makeNode(true);
+    svg.appendChild(node);
+}
+/*
+// make  one mapped to mouse:
+var bnode = makeNode(false);
+svg.appendChild(bnode);
+
+// make the node follow cursor:
+document.body.onmousemove=function(event){
+    bnode.setAttribute("transform","translate(" + (event.clientX + window.pageXOffset) + ", " + (event.clientY + window.pageYOffset) +")");
+};
+
+setInterval(function() {
+    wiggle_factor += 1/60;
+    nodes.forEach(function(node) {
+        
+        node.setAttribute("transform", "translate(" 
+                          + (Math.sin(wiggle_factor) * 200 + node.x) 
+                          + ", " 
+                          + (Math.sin(wiggle_factor) * 200 + node.y) 
+                          + ")");        
+    })
+},1000/60);
+*/
+</script>
+
+</body>
+</html>

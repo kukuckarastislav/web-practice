@@ -1,0 +1,53 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #007aff, #00a8ff, #00ccff, #00e9d8, #00ff9b);
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.draggable-elem{
+    position: absolute;
+    background-color: white;
+    font-size: 1.6em;
+    width: 200px;
+    height: 200px;
+    border-radius: 1em;
+    transform: translate(-50%, -50%);
+    left: 100px;
+    top: 100px;
+    user-select: none;
+    display: grid;
+    place-items: center;
+    font-family: "Popins", sans-serif;
+    font-weight: 600;
+    box-shadow: 0 0 0.8em 4px rgba(0, 0, 0, 0.1), inset 0 0 0.3em 0.2em rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.1s ease-in-out;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.draggable-elem:hover {
+    box-shadow: 0 0 1.2em 10px rgba(0, 0, 0, 0.12), inset 0 0 0.3em 0.2em rgba(0, 0, 0, 0.1);
+    cursor: grab;
+}
+
+.draggable-elem-svg{
+    fill: white;
+    filter: drop-shadow(0px 0px 10px rgb(0 0 0 / 0.2));
+    cursor: pointer;
+}
+
+.draggable-elem-svg:hover{
+    fill: whitesmoke;
+    filter: drop-shadow(0px 0px 20px rgb(0 0 0 / 0.3));
+}
