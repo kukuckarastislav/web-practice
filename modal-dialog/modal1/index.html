@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <input type="text" class="input-css" placeholder="Enter project name">
+        <button class="btn" onclick="openPopup()">Save</button>
+
+        <div class="popup__dimer" id="popupId">
+            <div class="popup">
+                <div class="popup__header">
+                    <h2 class="popup__title">Save project</h2>
+                    <button class="btn-popup__close" onclick="closePopup()">&times;</button>
+                </div>
+                <div class="popup__content">
+                    Are you sure you want to save this project?
+                    Project will be saved in your account.
+                </div>
+                <div class="popup__operations">
+                    <button class="btn btn-secondary" onclick="closePopup()">Cancel</button>
+                    <button class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="background-color: white; height: 1000px;">
+        s
+    </div>
+    
+</body>
+</html>

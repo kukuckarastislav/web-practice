@@ -41,29 +41,6 @@ export default class Card{
             this.activeRef = this;
         });
 
-        /*
-        this.root.addEventListener(this.events.move, (e) => { 
-            if (this.moveElement) {
-                e.preventDefault();
-                let newX = !this.isTouchDevice ? e.clientX : e.touches[0].clientX;
-                let newY = !this.isTouchDevice ? e.clientY : e.touches[0].clientY;
-    
-                const moveY = this.root.offsetTop - (this.initialY - newY);
-                const moveX = this.root.offsetLeft - (this.initialX - newX);
-        
-                if (moveX >= this.root.offsetWidth / 2 && moveX <= window.innerWidth - this.root.offsetWidth / 2) {
-                    this.root.style.left = moveX + "px";    
-                    this.initialX = newX;
-                }
-        
-                if (moveY >= this.root.offsetHeight / 2 && moveY <= window.innerHeight - this.root.offsetHeight / 2) {
-                    this.root.style.top = moveY + "px";
-                    this.initialY = newY;
-                }
-            }
-        });
-        */
-
         this.root.addEventListener(this.events.up, (e) => {
             this.moveElement = false;
             this.activeRef = null;
