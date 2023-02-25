@@ -1,11 +1,11 @@
 import KanbanAPI from "../api/KanbanAPI.js";
 
 export default class DropZone{
-    constructor() {
-        
+    constructor(kanbanRef) {
+        this.kanbanRef = kanbanRef;
     }
 
-    static createDropZone() {
+    createDropZone() {
         const range = document.createRange();
         range.selectNode(document.body);
         const dropZone = range.createContextualFragment(`
@@ -23,6 +23,7 @@ export default class DropZone{
 
         dropZone.addEventListener("drop", e => {
             e.preventDefault();
+            console.log("drop from dropzone")
             dropZone.classList.remove("kanban__dropzone--active")
             
             const columnElement = dropZone.closest(".kanban__column")
@@ -42,6 +43,8 @@ export default class DropZone{
                 columnId,
                 position: droppedIndex
             });
+            this.kanbanRef.applyDragendTransition = false;
+            
         })
 
 

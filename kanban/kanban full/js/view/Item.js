@@ -1,10 +1,14 @@
 import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
+import Kanban from "./Kanban.js";
 
 export default class Item{
-    constructor(id, content, priority, messages, attachments) {
-
-        const bottomDropZone = DropZone.createDropZone()
+    draging = false;
+    animationDuration = 300;
+    constructor(kanbanRef, id, content, priority, messages, attachments) {
+        this.kanbanRef = kanbanRef;
+        this.draggingNode = null;
+        const bottomDropZone = new DropZone(this.kanbanRef).createDropZone()
 
         this.elements = {};
         this.elements.root = Item.createRoot(priority);
@@ -47,12 +51,57 @@ export default class Item{
 
         this.elements.root.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", id);
-            console.log('dragstart', e)
+            this.offsetX = e.offsetX;
+            this.offsetY = e.offsetY;
+            this.draging = true;
+            this.draggingNode = this.elements.root.cloneNode(true);
+            this.draggingNode.dataset.id = "noID";
+            this.draggingNode.classList.add("draged-item-helper");
+            document.getElementById("draggedItemHelperID").appendChild(this.draggingNode);
+            this.startDragingLeft = (e.clientX - this.offsetX) + "px";
+            this.startDragingTop = (e.clientY - this.offsetY) + "px";
+            this.draggingNode.style.left = this.startDragingLeft;
+            this.draggingNode.style.top = this.startDragingTop;
+            this.elements.root.classList.add("dragging")
+        });
+
+        this.elements.root.addEventListener("dragend", (e) => {
+            this.draging = false;
+
+            if (this.kanbanRef.applyDragendTransition) {
+                if (this.draggingNode) {
+                    this.draggingNode.style.left = this.startDragingLeft;
+                    this.draggingNode.style.top = this.startDragingTop;
+                    this.draggingNode.classList.add("draged-item-helper__transition")   
+                }
+                setTimeout(() => {
+                    this.elements.root.classList.remove("dragging")
+                    this.kanbanRef.removeHelperDragableItem();
+                }, this.animationDuration);
+                this.draggingNode = null;    
+            } else {
+                this.elements.root.classList.remove("dragging")
+                this.kanbanRef.removeHelperDragableItem();
+                this.kanbanRef.applyDragendTransition = true;
+                this.draggingNode = null;
+            }
+            
+            
+        });
+
+        this.elements.root.addEventListener("drag", (e) => {
+            e.preventDefault();
+            if (this.draggingNode && !(e.pageX == 0 && e.pageY == 0 && e.clientX == 0 && e.clientY == 0)) {
+                this.draggingNode.style.left = (e.pageX - this.offsetX) + "px";
+                this.draggingNode.style.top = (e.pageY - this.offsetY) + "px";   
+            }
         });
 
         this.elements.input.addEventListener("drop", e => {
             e.preventDefault();
         })
+
+
     }
 
     static createRoot(priority) {

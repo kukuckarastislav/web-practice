@@ -3,16 +3,27 @@ import Column from "./Column.js";
 export default class Kanban{
     constructor(root) {
         this.root = root;
+        this.dragging = false;
 
         Kanban.columns().forEach(column => {
             // TODO: create an instance column class
-            const columnView = new Column(column.id, column.title, column.color);
+            const columnView = new Column(this, column.id, column.title, column.color);
             
             this.root.appendChild(columnView.elements.root)
             
         });
     }
 
+    applyDragendTransition = true;
+
+    removeHelperDragableItem() {
+        let helperDragableItem = document.getElementById("draggedItemHelperID");
+        if (helperDragableItem) {
+            while (helperDragableItem.firstChild) {
+                helperDragableItem.removeChild(helperDragableItem.firstChild);
+            }   
+        }
+    }
 
     static columns() {
         return [

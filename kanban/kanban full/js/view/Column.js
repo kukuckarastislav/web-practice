@@ -3,8 +3,10 @@ import DropZone from "./DropZone.js";
 import Item from "./Item.js"
 
 export default class Column{
-    constructor(id, title, color) {
-        const topDropZone = DropZone.createDropZone();
+    constructor(kanbanRef, id, title, color) {
+        this.kanbanRef = kanbanRef;
+        this.draggingNode = null;
+        const topDropZone = new DropZone(this.kanbanRef).createDropZone();
 
         this.elements = {};
         this.elements.root = Column.createRoot(color);
@@ -53,7 +55,7 @@ export default class Column{
     }
 
     renderItem(data) {
-        const item = new Item(data.id, data.content, data.priority, data.messages, data.attachments)
+        const item = new Item(this.kanbanRef, data.id, data.content, data.priority, data.messages, data.attachments)
         
         this.elements.items.appendChild(item.elements.root)
     }
