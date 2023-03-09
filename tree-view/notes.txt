@@ -1,0 +1,12 @@
+bg #0A1929
+card bg #132F4C
+card fg #1E4976
+tree smanji povecaj #3399FF
+hover RGB(38, 63, 90)
+click RGB(48, 72, 98)
+active RGB(28, 77, 126)
+
+tree
+    font: IBM Plex Sans
+    folder color white medium
+    items color #B2BAC2 regular
