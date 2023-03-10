@@ -19,7 +19,7 @@ html, body{
     flex-direction: column;
     width: 500px;
     height: 600px;
-
+    overflow-y: scroll;
     background-color: #132F4C;
     border-radius: 10px;
     border: 1px solid #1E4976;

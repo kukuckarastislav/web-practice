@@ -49,6 +49,8 @@ export default class TreeView {
                 return 'image_icon.svg';
             case 'pptx':
                 return 'kashifarif_file_paper_extension_folder_icon.svg';
+            case 'pdf':
+                return 'kashifarif_file_paper_extension_folder_icon.svg';
             default:
                 return '';
         }
@@ -162,7 +164,16 @@ class Folder{
     }
     
     calculateVerticalLineHeight() {
-        this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-6}px`;
+        if (!this.children || this.children.length === 0) {
+            this.verticalLine.style.height = '0px';
+            return;
+        }
+
+        if (this.children && this.children.length > 0 && this.children[this.children.length-1].type === 1) {
+            this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-this.childrenDiv.lastChild.offsetHeight+24}px`;
+        } else {
+            this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-6}px`;   
+        }
         if (this.parentNode !== null) {
             this.parentNode.calculateVerticalLineHeight()   
         }

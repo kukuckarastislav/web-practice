@@ -55,6 +55,29 @@
                     "name": "cool.jpg"
                 },
                 {
+                    "type": 1,
+                    "name": "My best videos",
+                    "children": [
+                        {
+                            "type": 2,
+                            "name": "video1.mp4"
+                        },
+                        {
+                            "type": 2,
+                            "name": "video2.mp4"
+                        },
+                        {
+                            "type": 2,
+                            "name": "video3.mp4"
+                        },
+                        {
+                            "type": 1,
+                            "name": "My stupid videos",
+                            "children": []
+                        }
+                    ]
+                },
+                {
                     "type": 2,
                     "name": "best_img.png"
                 }
@@ -63,6 +86,36 @@
         {
             "type": 2,
             "name": "nice.jpg"
+        },
+        {
+            "type": 2,
+            "name": "skripta_web.pdf"
+        },
+        {
+            "type": 1,
+            "name": "My Documents",
+            "children": [
+                {
+                    "type": 2,
+                    "name": "skripta_verovatnoca.pdf"
+                },
+                {
+                    "type": 2,
+                    "name": "skripta_programiranje.pdf"
+                },
+                {
+                    "type": 2,
+                    "name": "Uvod u digitalnu forenziku.pdf"
+                },
+                {
+                    "type": 2,
+                    "name": "Elektronsko placanje.pdf"
+                },
+                {
+                    "type": 2,
+                    "name": "React uvod.pptx"
+                }
+            ]
         }
     ]
 }
