@@ -1,12 +1,14 @@
 import TreeView from './TreeView.js';
 
-
+const title = document.getElementById('title-id')
 const treeViewHtml = document.getElementById('tree-view-id')
-const myFunc = (typeOfItem, name) => {
+const myFunc = (typeOfItem, path, name) => {
     if (typeOfItem === 1) {
-        console.log('Folder', name)
+        console.log('Folder', path)
+        title.innerHTML = path+"/"
     } else if (typeOfItem === 2) {
-        console.log('File', name)
+        console.log('File', path)
+        title.innerHTML = path
     }
  }
 

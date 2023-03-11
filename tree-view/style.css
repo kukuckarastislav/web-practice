@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 html, body{
     padding: 0;
     margin: 0;
@@ -12,12 +16,29 @@ html, body{
     align-items: center;
 }
 
+.view-area{
+    width: 800px;
+    height: 600px;
+    background-color: #132F4C;
+    border-radius: 0 10px 10px 0;
+}
+
+.view-area .view-area__header{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 12px 12px;
+    font-weight: 500;
+    font-size: 20px;
+
+    border-bottom: 1px solid #0A1929;
+}
+
 
 /* Tree View */
 .tree-view{
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
     height: 600px;
     overflow-y: scroll;
     background-color: #132F4C;
@@ -26,6 +47,7 @@ html, body{
     color: white;
     font-family: 'Roboto', sans-serif;
     padding: 12px 12px;
+
 }
 
 .tree-view .selected{
@@ -43,24 +65,36 @@ html, body{
     border-radius: 5px;
     padding: 5px 10px;
     user-select: none;
+    width: 100%;
+}
+
+.folder .children-box{
+    display: flex;
+    flex-direction: row;
 }
 
 .folder-vertical-line{
-    transform: translate(19px, -8px);
-    width: 2px;
+    transform: translate(30px, -6px);
+    width: 1px;
     height: 50px;
     background-color: #1E4976;
-    position: absolute;
+    position: relative;
 }
 
 
-.tree-view .item::before{
+.tree-view .item-before{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tree-view .item-before::before{
     content: "";
     display: block;
-    position: absolute;
+    position: relative;
     width: 12px;
-    height: 2px;
-    transform: translateX(-14px);
+    height: 1px;
+    transform: translateX(5px);
     background-color: #1E4976;
 }
 
@@ -89,6 +123,7 @@ html, body{
 }
 
 .folder .folder-children{
+    width: 100%;
 }
 
 .folder .hidden{

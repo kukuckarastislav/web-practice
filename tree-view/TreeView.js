@@ -27,7 +27,7 @@ export default class TreeView {
         if(child.type === 1) {
             new Folder(this, null, child, 0)
         } else if(child.type === 2) {
-            new Item(this, this.root, child.name, 0)
+            new Item(this, null, child.name, 0)
         }
     }
 
@@ -69,15 +69,18 @@ class Folder{
     constructor(treeViewRef, parentNode, folder, depth) {
         this.treeViewRef = treeViewRef;
         this.parentNode = parentNode;
-        if (parentNode === null) {
-            this.parentNodeChildrenDiv = this.treeViewRef.root;
-        } else {
-            this.parentNodeChildrenDiv = parentNode.childrenDiv   
-        }
         this.depth = depth;
         this.name = folder.name;
         this.children = folder.children;
         this.folderOpened = false;
+
+        if (parentNode === null) {
+            this.parentNodeChildrenDiv = this.treeViewRef.root;
+            this.path = "/"+this.name;
+        } else {
+            this.parentNodeChildrenDiv = parentNode.childrenDiv   
+            this.path = parentNode.path+"/"+this.name;
+        }
 
         this.createRoot();
         for (let i = 0; i < this.children.length; i++) {
@@ -107,12 +110,16 @@ class Folder{
         
         this.root = range.createContextualFragment(`
         <div class="folder" style="${style}">
-            <div class="item">
-                <img src="assets/${this.getFolderIcon()}" alt="icon" class="item-icon">
-                <div class="item-name folder-name">${this.name}</div>
+            <div class="item-before">
+                <div class="item">
+                    <img src="assets/${this.getFolderIcon()}" alt="icon" class="item-icon">
+                    <div class="item-name folder-name">${this.name}</div>
+                </div>
             </div>
-            <div class="folder-vertical-line hidden"></div>
-            <div class="folder-children hidden"></div>
+            <div class="children-box">
+                <div class="folder-vertical-line hidden"></div>
+                <div class="folder-children hidden"></div>
+            </div>
         </div>
         `).children[0];
         
@@ -128,7 +135,7 @@ class Folder{
         if(child.type === 1) {
             new Folder(this.treeViewRef, this, child, this.depth+1)
         } else if(child.type === 2) {
-            new Item(this.treeViewRef, this.childrenDiv, child.name, this.depth+1)
+            new Item(this.treeViewRef, this, child.name, this.depth+1)
         }
     }
 
@@ -143,7 +150,7 @@ class Folder{
                 this.hideFolder()
             }
 
-            this.treeViewRef.callbackFunc(1, this.name)
+            this.treeViewRef.callbackFunc(1, this.path, this.name)
         })
     }
 
@@ -164,15 +171,12 @@ class Folder{
     }
     
     calculateVerticalLineHeight() {
-        if (!this.children || this.children.length === 0) {
-            this.verticalLine.style.height = '0px';
-            return;
-        }
+        this.verticalLine.style.height = '0px';
 
         if (this.children && this.children.length > 0 && this.children[this.children.length-1].type === 1) {
             this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-this.childrenDiv.lastChild.offsetHeight+24}px`;
         } else {
-            this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-6}px`;   
+            this.verticalLine.style.height = `${this.childrenDiv.offsetHeight-14}px`;   
         }
         if (this.parentNode !== null) {
             this.parentNode.calculateVerticalLineHeight()   
@@ -187,7 +191,15 @@ class Item{
         this.treeViewRef = treeViewRef;
         this.name = name;
         this.depth = depth;
-        this.parentNode = parentNode
+        this.parentNode = parentNode;
+        if (parentNode === null) {
+            this.parentNodeChildrenDiv = this.treeViewRef.root    
+            this.path = "/"+this.name;
+        } else {
+            this.parentNodeChildrenDiv = parentNode.childrenDiv
+            this.path = parentNode.path+"/"+this.name;
+        }
+
         this.type = this.getTypeOfFile()
         this.icon = this.treeViewRef.getIconByType(this.type)
 
@@ -210,29 +222,33 @@ class Item{
         range.selectNode(document.body);
         if (this.icon) {
             this.root = range.createContextualFragment(`
-            <div class="item" style="${style}">
-                <img src="assets/${this.icon}" alt="icon" class="item-icon">
-                <div class="item-name">${this.name}</div>
+            <div class="item-before" style="${style}">
+                <div class="item">
+                    <img src="assets/${this.icon}" alt="icon" class="item-icon">
+                    <div class="item-name">${this.name}</div>
+                </div>
             </div>
             `).children[0];
         } else {
             this.root = range.createContextualFragment(`
-            <div class="item" style="${style}">
-                <div class="item-icon"></div>
-                <div class="item-name">${this.name}</div>
+            <div class="item-before" style="${style}">
+                <div class="item">
+                    <div class="item-icon"></div>
+                    <div class="item-name">${this.name}</div>
+                </div>
             </div>
             `).children[0];
         }
         
 
-        this.parentNode.appendChild(this.root);
+        this.parentNodeChildrenDiv.appendChild(this.root);
     }
 
     registerEvents() {
         this.root.addEventListener('click', () => { 
             this.treeViewRef.unselectAll()
-            this.root.classList.add('selected')
-            this.treeViewRef.callbackFunc(2, this.name)
+            this.root.firstElementChild.classList.add('selected')
+            this.treeViewRef.callbackFunc(2, this.path, this.name)
         })
     }
 }

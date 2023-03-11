@@ -96,6 +96,64 @@
             "name": "My Documents",
             "children": [
                 {
+                    "type": 1,
+                    "name": "nested folder 1",
+                    "children": [
+                        {
+                            "type": 1,
+                            "name": "nested folder 2",
+                            "children": [
+                                {
+                                    "type": 1,
+                                    "name": "nested folder 3",
+                                    "children": [
+                                        {
+                                            "type": 1,
+                                            "name": "nested folder 3",
+                                            "children": [
+                                                {
+                                                    "type": 1,
+                                                    "name": "nested folder 4",
+                                                    "children": [
+                                                        {
+                                                            "type": 1,
+                                                            "name": "nested folder 5",
+                                                            "children": [
+                                                                {
+                                                                    "type": 1,
+                                                                    "name": "nested folder 6",
+                                                                    "children": [
+                                                                        {
+                                                                            "type": 1,
+                                                                            "name": "nested folder 7",
+                                                                            "children": [
+                                                                                {
+                                                                                    "type": 1,
+                                                                                    "name": "nested folder 8",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "type": 2,
+                                                                                            "name": "exteme nested file 100% secure xD.pdf"
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "type": 2,
                     "name": "skripta_verovatnoca.pdf"
                 },
