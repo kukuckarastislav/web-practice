@@ -23,7 +23,7 @@
 
 
 ## Modal dialog
-![Final result](modal-dialog/finalResult.JPG)
+![Final result](modal-dialog/modal1/finalResult.JPG)
 
 
 ## Instagram clone
